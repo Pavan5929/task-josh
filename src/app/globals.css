@@ -1,27 +1,123 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* General Styles */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Arial', sans-serif;
+  background-color: #e9ecef;
+  margin: 0;
+  padding: 20px;
+  color: #495057;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1 {
+  color: #343a40;
+  margin-bottom: 20px;
+}
+
+/* Container Styles */
+.container {
+  max-width: 600px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Input and Select Styles */
+input[type="text"],
+select {
+  width: calc(100% - 20px);
+  padding: 12px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+/* Button Styles */
+button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+  margin: 5px;
+  /* Add margin for space between buttons */
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Task List Styles */
+.task-list {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #dee2e6;
+  transition: background-color 0.3s;
+}
+
+.task-item:hover {
+  background-color: #f1f1f1;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+/* Task Text Styles */
+.task-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.task-description {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+/* Priority Badge Styles */
+.task-priority {
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+}
+
+.task-priority.low {
+  background-color: #28a745;
+  /* Green */
+}
+
+.task-priority.medium {
+  background-color: #ffc107;
+  /* Yellow */
+}
+
+.task-priority.high {
+  background-color: #dc3545;
+  /* Red */
 }
